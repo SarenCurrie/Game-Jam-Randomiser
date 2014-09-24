@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		generateTheme()
 		generateThings(numberOfThemes.selectedColumn + 1)
 		NSLog(log)
-		
+		log = ""
 	}
 	
 	func generateTheme() {
