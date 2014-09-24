@@ -2,7 +2,7 @@ Adventure
 Fantasy
 Sci-fi
 Pirate
-Cats
+Mystery
 The Internet
 Badass
 Noir
@@ -10,3 +10,7 @@ Industrial
 Grunge
 Music
 Prehistory
+Nature
+Space
+The Future
+Wild West
