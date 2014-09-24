@@ -15,22 +15,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet var thingField: NSTextField!
 	@IBOutlet var numberOfThemes: NSMatrix!
 	
+	var log = ""
 	
 	var themes : [String] = []
 	var things : [String] = []
 	var themeSize : Int = 0
 	var thingSize : Int = 0
-
+	
 	func applicationDidFinishLaunching(aNotification: NSNotification?) {
 		let bundle = NSBundle.mainBundle()
 		let themePath = bundle.pathForResource("Themes", ofType: "txt")
 		let thingPath = bundle.pathForResource("Things", ofType: "txt")
 		
-		let allThemes = NSString(contentsOfFile: themePath!, encoding: NSUTF8StringEncoding, error: nil)
-		let allThings = NSString(contentsOfFile: thingPath!, encoding: NSUTF8StringEncoding, error: nil)
-		
-		themes = (allThemes as String).componentsSeparatedByString("\n")
-		things = (allThings as String).componentsSeparatedByString("\n")
+		themes = (NSString(contentsOfFile: themePath!, encoding: NSUTF8StringEncoding, error: nil) as String).componentsSeparatedByString("\n")
+		things = (NSString(contentsOfFile: thingPath!, encoding: NSUTF8StringEncoding, error: nil) as String).componentsSeparatedByString("\n")
 		
 		themeSize = themes.endIndex
 		thingSize = things.endIndex
@@ -44,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBAction func randomize(sender: AnyObject) {
 		generateTheme()
 		generateThings(numberOfThemes.selectedColumn + 1)
+		NSLog(log)
 		
 	}
 	
@@ -53,6 +52,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			theme = themes[Int(arc4random_uniform(UInt32(themeSize)))]
 		} while theme.hasPrefix("#") || theme.isEmpty
 		themeField.stringValue = theme
+		
+		log += "Theme: \(theme), "
+		
 	}
 	
 	func generateThings(number: Int) {
@@ -63,6 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				thing1 = things[Int(arc4random_uniform(UInt32(thingSize)))]
 			} while thing1.hasPrefix("#") || thing1.isEmpty
 			thingField.stringValue = "\(thing1)"
+			log += "Thing: \(thing1)"
 		}
 		else if number == 2 {
 			var thing1 : String
@@ -74,6 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				thing2 = things[Int(arc4random_uniform(UInt32(thingSize)))]
 			} while thing2 == thing1 || thing2.hasPrefix("#") || thing2.isEmpty
 			thingField.stringValue = "\(thing1), \(thing2)"
+			log += "Things: \(thing1), \(thing2)"
 		}
 		else if number == 3 {
 			var thing1 : String
@@ -89,7 +93,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				thing3 = things[Int(arc4random_uniform(UInt32(thingSize)))]
 			} while thing3 == thing1 || thing3 == thing2 || thing3.hasPrefix("#") || thing3.isEmpty
 			thingField.stringValue = "\(thing1), \(thing2), \(thing3)"
-
+			log += "Things: \(thing1), \(thing2), \(thing3)"
 		}
 	}
 
