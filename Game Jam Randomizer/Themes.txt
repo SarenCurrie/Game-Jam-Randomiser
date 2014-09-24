@@ -1,3 +1,4 @@
+# List of themes to draw from.
 Adventure
 Fantasy
 Sci-fi
