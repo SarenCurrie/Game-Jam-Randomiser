@@ -25,8 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet var thingField: NSTextField!
 	@IBOutlet var numberOfThemes: NSMatrix!
 	
-	var logFileStream =
-	
 	let stderr = NSFileHandle.fileHandleWithStandardError()
 	var log: String = ""
 	
@@ -111,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func printErr(s: String) {
-		stderr.writeData(s.dataUsingEncoding(NSUTF8StringEncoding))
+		stderr.writeData(s.dataUsingEncoding(NSUTF8StringEncoding)!)
 	}
 
 }
