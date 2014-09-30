@@ -25,7 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet var thingField: NSTextField!
 	@IBOutlet var numberOfThemes: NSMatrix!
 	
-	var log = ""
+	var logFileStream =
+	
+	let stderr = NSFileHandle.fileHandleWithStandardError()
+	var log: String = ""
 	
 	var themes : [String] = []
 	var things : [String] = []
@@ -105,6 +108,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			thingField.stringValue = "\(thing1), \(thing2), \(thing3)"
 			log += "Things: \(thing1), \(thing2), \(thing3)"
 		}
+	}
+	
+	func printErr(s: String) {
+		stderr.writeData(s.dataUsingEncoding(NSUTF8StringEncoding))
 	}
 
 }
