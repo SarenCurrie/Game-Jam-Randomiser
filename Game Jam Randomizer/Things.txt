@@ -23,7 +23,6 @@ A Burger
 Google
 Maths
 A Bridge
-Robots
 Wolves
 A Camera
 Invisibility
@@ -47,5 +46,6 @@ Action Figures
 A T-Shirt
 Fish
 A Calculator
-Uninstall
+Tentacles
+"Uninstall your game"
 A Block of Cheese

@@ -40,10 +40,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		themes = (NSString(contentsOfFile: themePath!, encoding: NSUTF8StringEncoding, error: nil) as String).componentsSeparatedByString("\n")
 		things = (NSString(contentsOfFile: thingPath!, encoding: NSUTF8StringEncoding, error: nil) as String).componentsSeparatedByString("\n")
+
+		themeSize = themes.count
+		thingSize = things.count
 		
-		themeSize = themes.endIndex
-		thingSize = things.endIndex
-		
+		checkDuplicates(themes, list: "themes")
+		checkDuplicates(things, list: "things")
+		checkDuplicates(themes)
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification?) {
@@ -108,7 +111,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-	func printErr(s: String) {
+	func checkDuplicates(a: Array<NSObject>, list: String? = nil) {
+		var i: Int = 0
+		for i; i < a.count - 1; i++ {
+			let element = a[i]
+			var j = i + 1
+			for j; j < a.count; j++ {
+				if element == a[j] {
+					if list != nil {
+						printErr("Warning! Duplicate item: \(a[j]), in \(list!).")
+						return
+					} else {
+						printErr("Warning! Duplicate item: \(a[j]).")
+						return
+					}
+				}
+			}
+		}
+		
+	}
+
+	func printErr(error: String) {
+		let s = "\(error)\n"
 		stderr.writeData(s.dataUsingEncoding(NSUTF8StringEncoding)!)
 	}
 
