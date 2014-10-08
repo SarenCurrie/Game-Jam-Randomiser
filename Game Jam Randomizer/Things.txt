@@ -17,6 +17,7 @@ The Church of Scientology
 2^32
 A Trombone
 A Piano
+An Electric Guitar
 A Rocket
 Furniture
 A Burger
@@ -49,3 +50,7 @@ A Calculator
 Tautology
 "Uninstall Your Game"
 A Block of Cheese
+A Library
+Clouds
+Coffee
+A Skyscraper
