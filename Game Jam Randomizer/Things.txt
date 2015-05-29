@@ -1,20 +1,18 @@
 # List of things to draw from.
 2^32
+A Black Hole
 A Block of Cheese
 A Book
 A Bridge
 A Burger
 A Calculator
 A Camera
-A CD
+A Compact Disk
+A Cowboy Hat
 A Credit Card
 A Cube
-A Dragon
 A Fire Monster
-A Hat
-A High End Gaming Computer
 A Lake
-A Lecturer
 A Library
 A Party
 A Piano
@@ -22,41 +20,57 @@ A River
 A Rocket
 A Skyscraper
 A Snake
-A Sword
 A T-Shirt
+A Top Hat
 A Trombone
+A Whiteboard
 Action Figures
 An Electric Guitar
 Antarctica
 Auckland City
+Beef
+Bitcoin
 Books
 Cabbage
 Cats
 Clouds
 Coffee
+Defenestration
 Dinosaurs
-Fish
-Furniture
+Dolphins
+Dragons
+Earth's Moon
+Film
+Glasses
 Google
+Gravity
+Headphones
+Haiku
 Invisibility
-K-Pop
 Laser Guns
+Leather Boots
 Maths
-Neckbeards
+Middle Mouse Button
 Penguins
 Perscription Drugs
+Pistons
+Pixels
 Pizza
 Pyjamas
+RNG
 Robots
-Seaside
+Sharks
 Snow
-Tautology
-The Church of Scientology
+Swords
+The Beach
+The Harbour Bridge
 The Konami Code
 The Ocean
 The Olympics
+The Universty of Auckland
+Towering Inferno
 "Uninstall Your Game"
-Version Control
+Whales
 Wind
 Wolves
 World War II
